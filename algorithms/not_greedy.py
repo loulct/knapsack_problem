@@ -1,7 +1,7 @@
-import node
+from objects.node import Node
 
 
-def not_greedy(nodeList:list[node.Node]) -> tuple[float | 0, list[node.Node], list] | None:
+def not_greedy(capacity:float, nodeList:list[Node]) -> tuple[float, list[Node], list] | None:
         '''
         @type capacity:float
         @type nodeList:list[node.Node]
@@ -13,16 +13,16 @@ def not_greedy(nodeList:list[node.Node]) -> tuple[float | 0, list[node.Node], li
             return None
         
         switchList = swap(nodeList)
-        temporaire = calculatePath(switchList[0])
+        temporaire = calculatePath(capacity, switchList[0])
 
         for path in switchList:
-            if calculatePath(path)[0] > temporaire[0]:
-                temporaire = calculatePath(path)
+            if calculatePath(capacity, path)[0] > temporaire[0]:
+                temporaire = calculatePath(capacity, path)
 
         return temporaire
 
 
-def swap(nodeList:list[node.Node]) -> list[list[node.Node]] | None:
+def swap(nodeList:list[Node]) -> list[list[Node]] | None:
     '''
     @type nodeList:list[node.Node]
 
@@ -44,7 +44,7 @@ def swap(nodeList:list[node.Node]) -> list[list[node.Node]] | None:
     return switchList
 
 
-def calculatePath(capacity:float, nodeList:list[node.Node]) -> tuple[float | 0, list[node.Node], list]:
+def calculatePath(capacity:float, nodeList:list[Node]) -> tuple[float, list[Node], list]:
     '''
     @type nodeList:list[node.Node]
     

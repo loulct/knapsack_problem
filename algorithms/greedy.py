@@ -1,6 +1,6 @@
-import node
+from objects.node import Node
 
-def greedy(capacity:float, nodeList:list[node.Node]) -> float:
+def greedy(capacity:float, nodeList:list[Node]) -> float:
     '''
     :type capacity:float
     :type nodeList:list[node.Node]
