@@ -13,13 +13,13 @@ def not_greedy(capacity:float, nodeList:list[Node]) -> tuple[float, list[Node], 
             return None
         
         switchList = swap(nodeList)
-        temporaire = calculatePath(capacity, switchList[0])
+        temp = calculatePath(capacity, switchList[0])
 
         for path in switchList:
-            if calculatePath(capacity, path)[0] > temporaire[0]:
-                temporaire = calculatePath(capacity, path)
+            if calculatePath(capacity, path)[0] > temp[0]:
+                temp = calculatePath(capacity, path)
 
-        return temporaire
+        return temp
 
 
 def swap(nodeList:list[Node]) -> list[list[Node]] | None:
