@@ -1,9 +1,6 @@
 # knapsack_problem
-Showcases several algorithms solving the knapsack problem using Python and the Tkinter UI
+Made in 2018 (school project) using Python and Tkinter (Python binding to the Tk GUI toolkit).
+Showcases 2 algorithms (greedy and recursive) solving the knapsack problem (Problem in combinatorial optimization).
 
-### TODO
-- improve UI
-- improve performance
-- add algorithm selection
-- add more algorithms
-- add web implementation for better UI ?
+Poor performance for recursion using more than nine nodes.
+Ugly interface.
